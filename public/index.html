@@ -8,6 +8,19 @@
     <title>prive</title>
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '2199770043617605',
+          autoLogAppEvents: true,
+          xfbml: true,
+          cookie: true,
+          version: 'v3.2'
+        });
+        history.replaceState({}, '', '/#/login-status');
+      };
+    </script>
+    <script async defer src="https://connect.facebook.net/zh_TW/sdk.js"></script>
     <noscript>
       <strong>We're sorry but prive doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
