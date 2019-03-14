@@ -1,6 +1,6 @@
 # prive
-This is a web app building by Vue.js. It can show your facebook pages.
-
+This is a web app building by Vue.js. It can show your facebook pages.  
+you can access by https://luzhaigo.github.io/prive/
 ## Project setup
 ```
 yarn install
