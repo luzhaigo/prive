@@ -1,6 +1,7 @@
 <template>
 <div class="posts">
-  <h2>Posts</h2>
+  <h2>Page: {{pageMap[$route.params.id].name}}</h2>
+  <h5>Posts:</h5>
   <ul v-if="list.length">
     <li v-for="item in list" :key="item.id" class="item">
       <img @click="deletePost({...deleteFeedParams, feedId: item.id})" src="../assets/delete-button.svg"/>
@@ -8,6 +9,7 @@
       <div class="content"><div class="title">created time:</div>{{item.created_time}}</div>
     </li>
   </ul>
+  <div v-else>No Feeds</div>
   <div class="paging">
     <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">previous</button>
     <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">next</button>
@@ -21,6 +23,7 @@ const { mapActions, mapState } = createNamespacedHelpers('post');
 const { mapState: mapPageState } = createNamespacedHelpers('page');
 
 export default {
+  name: 'PostList',
   computed: {
     ...mapState({
       list: 'data',
@@ -29,7 +32,7 @@ export default {
     ...mapPageState(['pageMap']),
     deleteFeedParams() {
       return {
-        accessToken: this.pageMap[this.$route.params.id], 
+        accessToken: this.pageMap[this.$route.params.id].accessToken, 
         pageId: this.$route.params.id, 
       };
     }
@@ -48,6 +51,10 @@ export default {
   display: flex;
   flex-flow: column;
   align-items: center;
+  h5 {
+    margin: 0;
+    width: 500px;
+  }
   ul {
     width: 500px;
     text-align: center;

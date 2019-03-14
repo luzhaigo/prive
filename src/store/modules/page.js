@@ -7,7 +7,7 @@ const mutations = {
   storePageList(state, pageList) {
     state.pageList = pageList;
     state.pageMap = pageList.data.reduce((acc, page) => {
-      acc[page.id] = page.access_token;
+      acc[page.id] = { accessToken: page.access_token, name: page.name};
       return acc;
     }, {});
   },

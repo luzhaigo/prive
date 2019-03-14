@@ -6,7 +6,7 @@ const state = {
 const mutations = {
   updatePosts(state, res) {
     state.data = res.data;
-    state.paging = res.paging;
+    state.paging = res.paging || {};
   },
   clearAll(state) {
     state.data = [];
