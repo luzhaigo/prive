@@ -1,18 +1,20 @@
 <template>
 <div class="posts">
   <h2>Page: {{pageMap[$route.params.id].name}}</h2>
-  <h5>Posts:</h5>
-  <ul v-if="list.length">
-    <li v-for="item in list" :key="item.id" class="item">
-      <img @click="deletePost({...deleteFeedParams, feedId: item.id})" src="../assets/delete-button.svg"/>
-      <div class="content"><div class="title">message:</div>{{item.message}}</div>
-      <div class="content"><div class="title">created time:</div>{{item.created_time}}</div>
-    </li>
-  </ul>
-  <div v-else>No Feeds</div>
-  <div class="paging">
-    <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">previous</button>
-    <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">next</button>
+  <div class="container">
+    <h5>Posts:</h5>
+    <ul v-if="list.length">
+      <li v-for="item in list" :key="item.id" class="item">
+        <img @click="deletePost({...deleteFeedParams, feedId: item.id})" src="../assets/delete-button.svg"/>
+        <div class="content"><div class="title">message:</div>{{item.message}}</div>
+        <div class="content"><div class="title">created time:</div>{{item.created_time}}</div>
+      </li>
+    </ul>
+    <div v-else>No Feeds</div>
+    <div class="paging">
+      <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">previous</button>
+      <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">next</button>
+    </div>
   </div>
 </div>
 </template>
@@ -53,10 +55,8 @@ export default {
   align-items: center;
   h5 {
     margin: 0;
-    width: 500px;
   }
   ul {
-    width: 500px;
     text-align: center;
     padding: 5px;
     border: 1px solid #c3c3c3;
@@ -70,6 +70,7 @@ export default {
     flex-flow: column;
     text-align: left;
     padding: 20px;
+    white-space:pre-wrap;
     img {
       position: absolute;
       width: 20px;
@@ -87,8 +88,11 @@ export default {
       }
     }
   }
+  .container {
+    max-width: 100vw;
+    min-width: 500px;
+  }
   .paging {
-    width: 500px;
     display: flex;
     justify-content: flex-end;
     button:last-child {
