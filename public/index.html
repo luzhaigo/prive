@@ -17,7 +17,7 @@
           cookie: true,
           version: 'v3.2'
         });
-        history.replaceState({}, '', '/#/login-status');
+        window.dispatchEvent(new Event('FBInit'));
       };
     </script>
     <script async defer src="https://connect.facebook.net/zh_TW/sdk.js"></script>

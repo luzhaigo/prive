@@ -5,23 +5,31 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-const { mapMutations } = createNamespacedHelpers('auth');
+const { mapActions, mapState } = createNamespacedHelpers('auth');
 
 export default {
+  computed: {
+    ...mapState({
+      status: state => state.loginStatus.status,
+    })
+  },
+  watch: {
+    status(newV) {
+      if (newV === 'connected') {
+        this.$router.replace('/page-list');
+      } else if (newV !== undefined) {
+        this.$router.replace('/login');
+      } else {
+        this.$router.replace('/login');
+      }
+    }
+  },
   methods: {
-    ...mapMutations(['storeLoginStatus']),
+    ...mapActions(['getLoginStatus']),
   },
   mounted() {
-    if (FB) {
-      FB.getLoginStatus((res) => {
-        if (res.status === 'connected') {
-          this.storeLoginStatus(res);
-          this.$router.replace('/page-list');
-        } else {
-          console.log(status, 'need login');
-          this.$router.replace('/login');
-        }
-      });
+    if (window.FB) {
+      this.getLoginStatus();
     }
   }
 };
