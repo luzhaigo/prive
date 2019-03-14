@@ -1,37 +1,65 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div id="logout">
+      <button v-if="status === 'connected'" @click="logout">Logout</button>
+    </div>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-const { mapActions } = createNamespacedHelpers('auth');
+const { mapActions, mapState } = createNamespacedHelpers('auth');
 
 export default {
   name: 'app',
+  computed: {
+    ...mapState({
+      status: state => state.loginStatus.status,
+    }),
+  },
   methods: {
-    ...mapActions(['logout']),
-    initFB() {
-      this.$router.replace('/login-status');
+    ...mapActions({
+      logout(dispath) {
+        dispath('logout', this.goToLogin);
+      },
+      getLoginStatus(dispath) {
+        dispath('getLoginStatus', { goToLogin: this.goToLogin, goToPage: this.goToPage});
+      }
+    }),
+    goToLogin() {
+      this.$router.replace('/login');
+    },
+    goToPage() {
+      this.$router.replace('/page-list');
     }
   },
-  mounted() {
-    window.addEventListener('FBInit', this.initFB);
+  beforeMount() {
     if (!window.FB) {
       this.$router.replace('/');
     }
   },
+  mounted() {
+    window.fbAsyncInit = () => {
+      window.FB.init({
+        appId: '2199770043617605',
+        autoLogAppEvents: true,
+        xfbml: true,
+        cookie: true,
+        version: 'v3.2'
+      });
+      window.FB.AppEvents.logPageView();
+      this.getLoginStatus();
+    };
+  },
   beforeDestroy() {
-    window.removeEventListener('FBInit',  this.initFB);
-    if (window.FB) {
-      this.logout();
-    }
+    this.logout();
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 html, body {
   height: 100%;
 }
@@ -40,5 +68,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  #logout {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 </style>

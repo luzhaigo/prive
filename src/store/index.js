@@ -9,6 +9,9 @@ Vue.use(Vuex);
 const mutations = {
   setUserID(state, userID) {
     state.userID = userID;
+  },
+  clearUserID(state) {
+    state.userID = '';
   }
 };
 
