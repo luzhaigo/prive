@@ -22,7 +22,7 @@ yarn run build
 ---
 #### Login
 
-<img src="https://luzhaigo.github.io/prive_facebook_page/gif/log_in.gif" width="500" alt="login">
+<img src="https://luzhaigo.github.io/prive_facebook_page/gif/login.gif" width="500" alt="login">
 
 #### Go to posts page and paging
 
