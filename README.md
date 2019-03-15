@@ -23,16 +23,15 @@ yarn run build
 
 #### Login
 
-![Alt login](https://luzhaigo.github.io/prive/gif/login.gif)
+<img src="https://luzhaigo.github.io/prive/gif/login.gif" width="300" alt="login">
 
 #### Go to posts page and paging
 
-![Alt Go to posts page and paging](https://luzhaigo.github.io/prive/gif/gotoposts.gif)
+<img src="https://luzhaigo.github.io/prive/gif/gotoposts.gif" width="300" alt="Go to posts page and paging">
 
 #### Delete the post
 
-![Alt Delete the post](https://luzhaigo.github.io/prive/gif/deletethepost.gif)
-
+<img src="https://luzhaigo.github.io/prive/gif/deletethepost.gif" width="300" alt="Delete the post">
 
 ## License
 
