@@ -68,12 +68,6 @@ export default {
         }
       }
     }
-    .hint {
-      position: absolute;
-      white-space: nowrap;
-      font-size: 12px;
-      left: 50%;
-    }
   }
 }
 </style>

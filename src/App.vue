@@ -46,7 +46,6 @@ export default {
         appId: '2199770043617605',
         autoLogAppEvents: true,
         xfbml: true,
-        cookie: true,
         version: 'v3.2'
       });
       window.FB.AppEvents.logPageView();
@@ -60,6 +59,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#app {
+  #logout {
+    button {
+      width: 100%;
+      height: 50px;
+      color: white;
+      background-color: #4065b4;
+      font-size: 20px;
+    }
+  }
+}
+</style>
+<style>
 html, body {
   height: 100%;
 }
@@ -68,9 +80,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  #logout {
-    display: flex;
-    justify-content: flex-end;
-  }
+  height: 100%;
 }
 </style>

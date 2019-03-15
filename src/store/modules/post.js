@@ -35,7 +35,7 @@ const actions = {
       {access_token: accessToken},
       function (response) {
         if (response.success) {
-          dispatch('getPosts', pageId);
+          dispatch('getPosts', { id: pageId });
         }
       }
     );
