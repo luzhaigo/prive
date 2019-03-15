@@ -207,14 +207,14 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 1279px){
-    .container {
-      width: 90vw;
-    }
-  }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 768px){
     .container {
       width: 480px;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .container {
+      width: 90vw;
     }
   }
   .paging {
