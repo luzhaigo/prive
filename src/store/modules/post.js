@@ -28,12 +28,14 @@ const actions = {
       }
     );
   },
-  deletePost({dispatch}, {accessToken, feedId, pageId}) {
+  deletePost({dispatch, commit}, {accessToken, feedId, pageId}) {
+    commit('toggleApiLoading', true, {root: true});
     window.FB.api(
       `/${feedId}`,
       "DELETE",
       {access_token: accessToken},
       function (response) {
+        commit('toggleApiLoading', false, {root: true});
         if (response.success) {
           dispatch('getPosts', { id: pageId });
         }

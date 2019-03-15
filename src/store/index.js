@@ -12,7 +12,10 @@ const mutations = {
   },
   clearUserID(state) {
     state.userID = '';
-  }
+  },
+  toggleApiLoading(state, status) {
+    state.apiLoading = status;
+  },
 };
 
 export default new Store({
@@ -23,6 +26,7 @@ export default new Store({
   },
   state: {
     userID: '',
+    apiLoading: false,
   },
   mutations,
 });

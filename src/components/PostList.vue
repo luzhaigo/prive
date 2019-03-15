@@ -39,11 +39,12 @@
     <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">Previous</button>
     <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">Next</button>
   </div>
+  <img class="loading" src="../assets/loading.svg" v-if="apiLoading"/>
 </div>
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
+import { mapState as mapRootState, createNamespacedHelpers } from 'vuex';
 const { mapActions, mapState } = createNamespacedHelpers('post');
 const { mapState: mapPageState } = createNamespacedHelpers('page');
 
@@ -55,6 +56,7 @@ export default {
     };
   },
   computed: {
+    ...mapRootState(['apiLoading']),
     ...mapState({
       list: 'data',
       paging: 'paging',
@@ -227,6 +229,14 @@ export default {
       font-size: 20px;
       outline: none;
     }
+  }
+  .loading {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 </style>
