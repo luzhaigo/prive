@@ -115,7 +115,6 @@ export default {
       margin-top: 5px;
     }
     padding: 10px 10px 0;
-    white-space:pre-wrap;
     .more {
       position: absolute;
       width: 15px;
@@ -151,6 +150,8 @@ export default {
       margin: 5px 0;
       .message {
         font-weight: bold;
+        overflow: hidden;
+        white-space: pre-wrap;
       }
       .avatar {
         width: 40px;
