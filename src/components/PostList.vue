@@ -34,10 +34,10 @@
       </li>
     </ul>
     <div v-else>No Feeds</div>
-    <div class="paging">
-      <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">previous</button>
-      <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">next</button>
-    </div>
+  </div>
+  <div class="paging">
+    <button v-if="paging.previous" @click="getPosts({id: $route.params.id, before: paging.cursors.before})">Previous</button>
+    <button v-if="paging.next" @click="getPosts({id: $route.params.id, after: paging.cursors.after})">Next</button>
   </div>
 </div>
 </template>
@@ -216,10 +216,16 @@ export default {
     }
   }
   .paging {
+    width: 100%;
+    height: 50px;
     display: flex;
-    justify-content: flex-end;
-    button:last-child {
-      margin-left: 10px;
+    button {
+      flex: 1;
+      cursor: pointer;
+      background-color: #4065b4;
+      color: white;
+      font-size: 20px;
+      outline: none;
     }
   }
 }

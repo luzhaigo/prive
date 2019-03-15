@@ -19,7 +19,7 @@ const actions = {
     window.FB.api(
       `/${id}/feed`,
       'GET', {
-        limit: 10,
+        limit: 5,
         after,
         before,
       },
