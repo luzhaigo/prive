@@ -40,12 +40,12 @@ export default {
     background-color: #4065b4;
     font-size: 20px;
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 768px){
     .login-button {
       width: 400px;
     }
   }
-  @media screen and (max-width: 1279px){
+  @media screen and (max-width: 768px){
     .login-button {
       width: 90vw;
     }
