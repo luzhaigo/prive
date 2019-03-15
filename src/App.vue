@@ -43,7 +43,7 @@ export default {
   mounted() {
     window.fbAsyncInit = () => {
       window.FB.init({
-        appId: '2199770043617605',
+        appId: process.env.VUE_APP_APPID,
         autoLogAppEvents: true,
         xfbml: true,
         version: 'v3.2'

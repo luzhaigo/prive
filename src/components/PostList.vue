@@ -213,8 +213,7 @@ export default {
   }
   @media screen and (min-width: 1280px){
     .container {
-      max-width: 100vw;
-      min-width: 480px;
+      width: 480px;
     }
   }
   .paging {
