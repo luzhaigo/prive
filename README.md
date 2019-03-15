@@ -1,6 +1,9 @@
-# prive
-This is a web app building by Vue.js. It can show your facebook pages.  
-you can access by https://luzhaigo.github.io/prive/
+# Prive
+This web app is built by Vue.js and is still in development. It can show your own facebook pages.  
+
+You can set up env variable VUE_APP_APPID with facebook application appId if you want to clone this repo and start coding.
+
+You can access by https://luzhaigo.github.io/prive/  
 ## Project setup
 ```
 yarn install
@@ -16,15 +19,5 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
 
-### Lints and fixes files
-```
-yarn run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
