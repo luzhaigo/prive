@@ -1,9 +1,9 @@
-# Prive
+# Prive Facebook Page
 This web app is built by Vue.js and is still in development. It can show your own facebook pages.  
 
 You can set up env variable VUE_APP_APPID with facebook application appId if you want to clone this repo and start coding.
 
-You can access by https://luzhaigo.github.io/prive/  
+You can access by https://luzhaigo.github.io/prive_facebook_page/  
 ## Project setup
 ```
 yarn install
@@ -20,18 +20,17 @@ yarn run build
 ```
 
 ---
-
 #### Login
 
-<img src="https://luzhaigo.github.io/prive/gif/login.gif" width="300" alt="login">
+<img src="https://luzhaigo.github.io/prive_facebook_page/gif/login.gif" width="300" alt="login">
 
 #### Go to posts page and paging
 
-<img src="https://luzhaigo.github.io/prive/gif/gotoposts.gif" width="300" alt="Go to posts page and paging">
+<img src="https://luzhaigo.github.io/prive_facebook_page/gif/gotoposts.gif" width="300" alt="Go to posts page and paging">
 
 #### Delete the post
 
-<img src="https://luzhaigo.github.io/prive/gif/deletethepost.gif" width="300" alt="Delete the post">
+<img src="https://luzhaigo.github.io/prive_facebook_page/gif/deletethepost.gif" width="300" alt="Delete the post">
 
 ## License
 
