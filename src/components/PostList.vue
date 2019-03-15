@@ -5,7 +5,7 @@
     <h5>Posts:</h5>
     <ul v-if="list.length">
       <li v-for="(item, idx) in list" :key="item.id" class="item">
-        <img ref="more" class="more" src="../assets/more.svg" @click="dropDownIndex = idx"/>
+        <img ref="more" class="more" src="../assets/more.svg" @click="dropDownIndex = dropDownIndex === -1 ? idx : -1"/>
         <ul v-if="idx === dropDownIndex" class="dropdown-menu">
           <li @click="deletePost({...deleteFeedParams, feedId: item.id})">Delete from page</li>
         </ul>
