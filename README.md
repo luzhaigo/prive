@@ -19,5 +19,16 @@ yarn run serve
 yarn run build
 ```
 
+---
 
+#### Login
 
+![Alt login](https://luzhai.github.io/prive/gif/login.gif)
+
+#### Go to posts page and paging
+
+![Alt Go to posts page and paging](https://luzhai.github.io/prive/gif/gotoposts.gif)
+
+#### Delete the post
+
+![Alt Delete the post](https://luzhai.github.io/prive/gif/deletethepost.gif)
